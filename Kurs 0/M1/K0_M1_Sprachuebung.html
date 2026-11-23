@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kurs 0 · Modul 1 – Sprachübung: Artikel und Plural</title>
+<style>
+:root { --ink:#1E2A36; --navy:#1F3A5F; --accent:#E07A1F; --soft:#F1F4F7; --line:#D5DDE5; --muted:#5B7A99; --ok:#2E7D5B; --okbg:#E5F4E4; --bad:#B23A3A; --badbg:#FBEBEB; }
+* { box-sizing:border-box; }
+body { margin:0; font-family: Calibri, "Segoe UI", Arial, sans-serif; color:var(--ink); line-height:1.5; font-size:18px; }
+header, main { max-width:860px; margin:0 auto; padding:0 20px; }
+header { padding-top:24px; }
+.kicker { color:var(--muted); font-size:15px; }
+h1 { color:var(--navy); margin:4px 0 16px; font-size:30px; }
+.card { background:var(--soft); border-radius:14px; padding:18px 20px; margin:0 0 24px; }
+.card h2 { margin:0 0 6px; color:var(--navy); font-size:22px; }
+.instr { margin:0 0 14px; }
+.instr [lang=uk] { display:block; color:var(--muted); font-size:16px; }
+.row { display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:8px 10px; border-radius:8px; background:#fff; margin-bottom:8px; border:2px solid transparent; }
+.row .q { flex:1 1 260px; }
+.row.ok { border-color:var(--ok); background:var(--okbg); }
+.row.bad { border-color:var(--bad); background:var(--badbg); }
+.why { flex-basis:100%; font-size:15px; color:var(--ink); display:none; }
+.row.checked .why { display:block; }
+select { font-family:inherit; font-size:17px; padding:4px 8px; border-radius:6px; border:1px solid var(--line); background:#fff; max-width:100%; }
+.opts { display:flex; gap:6px; flex-wrap:wrap; }
+.opt, .mbtn { font-family:inherit; font-size:16px; padding:6px 14px; border-radius:18px; border:2px solid var(--navy); background:#fff; color:var(--navy); cursor:pointer; }
+.opt[aria-pressed=true] { background:var(--navy); color:#fff; }
+.gapsel { margin:0 4px; }
+.match { display:grid; grid-template-columns:1fr 1fr; gap:10px 20px; }
+.match .col { display:flex; flex-direction:column; gap:8px; }
+.mbtn { text-align:left; border-radius:8px; }
+.mbtn.sel { background:var(--accent); border-color:var(--accent); color:#fff; }
+.mbtn.done { border-color:var(--ok); background:var(--okbg); color:var(--ok); cursor:default; }
+.mbtn.wrong { border-color:var(--bad); background:var(--badbg); }
+.actions { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+.actions button { font-family:inherit; font-size:16px; padding:8px 18px; border-radius:20px; cursor:pointer; border:0; }
+.check { background:var(--navy); color:#fff; }
+.solve, .reset { background:#fff; color:var(--navy); border:1px solid var(--line) !important; }
+.score { font-weight:700; }
+#total { background:var(--navy); color:#fff; border-radius:14px; padding:16px 20px; margin-bottom:40px; font-size:20px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Kurs 0 · Modul 1</div>
+  <h1>Sprachübung (freiwillig): Artikel und Plural der Fachbegriffe</h1><div class="card"><h2>Tipps: Der, die oder das?</h2>
+<p class="instr">Viele Fachbegriffe haben feste Endungen. Diese Regeln helfen dir:
+<span lang="uk">Багато фахових термінів мають сталі закінчення. Ці правила тобі допоможуть:</span></p>
+<ul>
+<li><b>-ung, -ei, -ion</b> → <b>die</b>: die Sendung, die Reederei, die Zollunion <span lang="uk" style="color:#5B7A99">· завжди жіночий рід</span></li>
+<li><b>-er</b> bei Personen und Firmen → meist <b>der</b>: der Spediteur, der Frachtführer, der Versender <span lang="uk" style="color:#5B7A99">· особи: переважно чоловічий рід</span></li>
+<li><b>Zusammengesetzte Wörter</b>: Das <b>letzte</b> Wort bestimmt den Artikel: der Kauf + <b>der</b> Vertrag = <b>der</b> Kaufvertrag; der Zoll + <b>das</b> Gebiet = <b>das</b> Zollgebiet <span lang="uk" style="color:#5B7A99">· рід складного слова визначає останнє слово</span></li>
+<li>Lerne jedes Nomen immer <b>mit Artikel und Plural</b>: der Spediteur, die Spediteure. <span lang="uk" style="color:#5B7A99">· вивчай кожен іменник з артиклем і формою множини</span></li>
+</ul></div>
+</header>
+<main id="app"></main>
+<main><div id="total">Gesamt: 0 von 0 Punkten</div></main>
+<script>
+const EX = [{"id": "s1", "type": "buttons", "title": "Teil 1 · Der, die oder das?", "de": "Wähle den richtigen Artikel.", "uk": "Обери правильний артикль.", "opts": ["der", "die", "das"], "items": [{"q": "Spediteur", "a": "der", "why": "Person mit -eur: der."}, {"q": "Sendung", "a": "die", "why": "Endung -ung: immer die."}, {"q": "Packstück", "a": "das", "why": "das Stück → das Packstück."}, {"q": "Reederei", "a": "die", "why": "Endung -ei: die."}, {"q": "Frachtführer", "a": "der", "why": "Person mit -er: der."}, {"q": "Ware", "a": "die", "why": "die Ware, Plural: die Waren."}, {"q": "Lager", "a": "das", "why": "das Lager – Ausnahme zur -er-Regel, kein Mensch."}, {"q": "Zollunion", "a": "die", "why": "Endung -ion: die."}, {"q": "Agent", "a": "der", "why": "Person: der Agent."}, {"q": "Packliste", "a": "die", "why": "die Liste → die Packliste."}]}, {"id": "s2", "type": "buttons", "title": "Teil 2 · Das letzte Wort entscheidet", "de": "Welchen Artikel hat das zusammengesetzte Wort? Achte auf das letzte Wort.", "uk": "Який артикль має складне слово? Зверни увагу на останнє слово.", "opts": ["der", "die", "das"], "items": [{"q": "Kauf + Vertrag = Kaufvertrag", "a": "der", "why": "der Vertrag → der Kaufvertrag."}, {"q": "Zoll + Abfertigung = Zollabfertigung", "a": "die", "why": "die Abfertigung → die Zollabfertigung."}, {"q": "Zoll + Gebiet = Zollgebiet", "a": "das", "why": "das Gebiet → das Zollgebiet."}, {"q": "Umschlag + Unternehmen = Umschlagsunternehmen", "a": "das", "why": "das Unternehmen → das Umschlagsunternehmen."}, {"q": "Verkehr + Mittel = Verkehrsmittel", "a": "das", "why": "das Mittel → das Verkehrsmittel."}, {"q": "Güter + Verkehr = Güterverkehr", "a": "der", "why": "der Verkehr → der Güterverkehr."}, {"q": "Handel + Rechnung = Handelsrechnung", "a": "die", "why": "die Rechnung → die Handelsrechnung."}, {"q": "Fracht + Brief = Frachtbrief", "a": "der", "why": "der Brief → der Frachtbrief."}]}, {"id": "s3", "type": "select", "title": "Teil 3 · Ein Wort – viele davon", "de": "Wie heißt der Plural? Wähle die richtige Form.", "uk": "Як звучить множина? Обери правильну форму.", "items": [{"q": "der Spediteur → die …", "opts": ["Spediteure", "Spediteuren", "Spediteurs"], "a": "Spediteure"}, {"q": "die Sendung → die …", "opts": ["Sendunge", "Sendungen", "Sendungs"], "a": "Sendungen"}, {"q": "das Packstück → die …", "opts": ["Packstücken", "Packstücks", "Packstücke"], "a": "Packstücke"}, {"q": "die Reederei → die …", "opts": ["Reedereien", "Reedereis", "Reederei"], "a": "Reedereien"}, {"q": "der Frachtführer → die …", "opts": ["Frachtführers", "Frachtführer", "Frachtführern"], "a": "Frachtführer"}, {"q": "der Kaufvertrag → die …", "opts": ["Kaufvertrage", "Kaufverträgen", "Kaufverträge"], "a": "Kaufverträge"}, {"q": "die Airline → die …", "opts": ["Airlinen", "Airlines", "Airline"], "a": "Airlines"}, {"q": "der Drittstaat → die …", "opts": ["Drittstaaten", "Drittstaate", "Drittstaats"], "a": "Drittstaaten"}, {"q": "die Zollbehörde → die …", "opts": ["Zollbehörden", "Zollbehördes", "Zollbehörde"], "a": "Zollbehörden"}, {"q": "das Lager → die …", "opts": ["Lagers", "Lager oder Läger", "Lagern"], "a": "Lager oder Läger"}]}];
+const state = {};
+function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function el(tag, attrs, html) { const e = document.createElement(tag); Object.assign(e, attrs || {}); if (html !== undefined) e.innerHTML = html; return e; }
+function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+function build(ex) {
+  const card = el('section', {className: 'card', id: ex.id});
+  card.append(el('h2', {}, esc(ex.title)));
+  card.append(el('p', {className: 'instr'}, esc(ex.de) + '<span lang="uk">' + esc(ex.uk) + '</span>'));
+  const box = el('div'); card.append(box);
+  state[ex.id] = {score: 0, max: ex.items.length};
+  if (ex.type === 'select' || ex.type === 'gap') {
+    ex.items.forEach((it, i) => {
+      const row = el('div', {className: 'row'});
+      const opts = ex.type === 'gap' ? ex.bank : it.opts;
+      const sel = '<select data-i="' + i + '"><option value="">– wählen –</option>' + opts.map(o => '<option>' + esc(o) + '</option>').join('') + '</select>';
+      if (ex.type === 'gap') row.append(el('div', {className: 'q'}, (i + 1) + '. ' + esc(it.q).replace('___', '<span class="gapsel">' + sel + '</span>')));
+      else { row.append(el('div', {className: 'q'}, esc(it.q))); row.insertAdjacentHTML('beforeend', sel); }
+      box.append(row);
+    });
+  } else if (ex.type === 'buttons') {
+    ex.items.forEach((it, i) => {
+      const row = el('div', {className: 'row'});
+      row.append(el('div', {className: 'q'}, esc(it.q)));
+      const o = el('div', {className: 'opts'});
+      ex.opts.forEach(op => {
+        const b = el('button', {className: 'opt', type: 'button'}, esc(op));
+        b.setAttribute('aria-pressed', 'false'); b.dataset.v = op; b.dataset.i = i;
+        b.onclick = () => { o.querySelectorAll('.opt').forEach(x => x.setAttribute('aria-pressed', x === b)); };
+        o.append(b);
+      });
+      row.append(o);
+      if (it.why) row.append(el('div', {className: 'why'}, esc(it.why)));
+      box.append(row);
+    });
+  } else if (ex.type === 'match') {
+    const m = el('div', {className: 'match'});
+    const L = el('div', {className: 'col'}), R = el('div', {className: 'col'});
+    let pick = null;
+    shuffle(ex.items).forEach(it => { const b = el('button', {className: 'mbtn', type: 'button'}, esc(it.q)); b.dataset.k = it.q; L.append(b); });
+    shuffle(ex.items).forEach(it => { const b = el('button', {className: 'mbtn', type: 'button', lang: 'uk'}, esc(it.a)); b.dataset.k = it.q; R.append(b); });
+    L.onclick = e => { const b = e.target.closest('.mbtn'); if (!b || b.classList.contains('done')) return; L.querySelectorAll('.mbtn').forEach(x => x.classList.remove('sel')); b.classList.add('sel'); pick = b; };
+    R.onclick = e => {
+      const b = e.target.closest('.mbtn'); if (!b || !pick || b.classList.contains('done')) return;
+      if (b.dataset.k === pick.dataset.k) { b.classList.add('done'); pick.classList.add('done'); pick.classList.remove('sel'); pick = null; }
+      else { b.classList.add('wrong'); setTimeout(() => b.classList.remove('wrong'), 600); state[ex.id].errors = (state[ex.id].errors || 0) + 1; }
+      updateMatch(ex, card);
+    };
+    m.append(L, R); box.append(m);
+  }
+  const act = el('div', {className: 'actions'});
+  const score = el('span', {className: 'score'});
+  if (ex.type !== 'match') {
+    const c = el('button', {className: 'check', type: 'button'}, 'Prüfen'); c.onclick = () => check(ex, card, score); act.append(c);
+    const s = el('button', {className: 'solve', type: 'button'}, 'Lösung zeigen'); s.onclick = () => solve(ex, card, score); act.append(s);
+  }
+  const r = el('button', {className: 'reset', type: 'button'}, 'Neu starten');
+  r.onclick = () => { const n = build(ex); card.replaceWith(n); state[ex.id].score = 0; total(); };
+  act.append(r, score);
+  card.append(act);
+  card._score = score;
+  return card;
+}
+function answerOf(ex, card, i) {
+  if (ex.type === 'buttons') { const b = card.querySelector('.opt[data-i="' + i + '"][aria-pressed="true"]'); return b ? b.dataset.v : ''; }
+  return card.querySelector('select[data-i="' + i + '"]').value;
+}
+function check(ex, card, score) {
+  let n = 0;
+  card.querySelectorAll('.row').forEach((row, i) => {
+    const ok = answerOf(ex, card, i) === ex.items[i].a;
+    row.classList.toggle('ok', ok); row.classList.toggle('bad', !ok); row.classList.add('checked');
+    if (ok) n++;
+  });
+  state[ex.id].score = n;
+  score.textContent = n + ' von ' + ex.items.length + ' richtig';
+  total();
+}
+function solve(ex, card, score) {
+  ex.items.forEach((it, i) => {
+    if (ex.type === 'buttons') card.querySelectorAll('.opt[data-i="' + i + '"]').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === it.a));
+    else card.querySelector('select[data-i="' + i + '"]').value = it.a;
+  });
+  card.querySelectorAll('.row').forEach(r => { r.classList.remove('bad'); r.classList.add('ok', 'checked'); });
+  score.textContent = 'Lösung angezeigt';
+}
+function updateMatch(ex, card) {
+  const done = card.querySelectorAll('.col:first-child .mbtn.done').length;
+  state[ex.id].score = Math.max(0, done - (state[ex.id].errors || 0));
+  card._score.textContent = done + ' von ' + ex.items.length + ' verbunden' + (state[ex.id].errors ? ' · ' + state[ex.id].errors + ' Fehlversuche' : '');
+  total();
+}
+function total() {
+  let s = 0, m = 0; for (const k in state) { s += state[k].score; m += state[k].max; }
+  document.getElementById('total').textContent = 'Gesamt: ' + s + ' von ' + m + ' Punkten';
+}
+const app = document.getElementById('app');
+EX.forEach(ex => app.append(build(ex)));
+total();
+</script>
+</body>
+</html>

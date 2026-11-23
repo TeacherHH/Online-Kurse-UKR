@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+    <html lang="de">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kurs 0 · Modul 1 – Text 1: Was macht ein Spediteur?</title>
+    <style>
+    :root { --ink:#1E2A36; --navy:#1F3A5F; --accent:#E07A1F; --soft:#F1F4F7; --line:#D5DDE5; --muted:#5B7A99; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: Calibri, "Segoe UI", Arial, sans-serif; color:var(--ink); background:#fff; line-height:1.6; font-size:18px; }
+    header { padding:24px 20px 8px; max-width:820px; margin:0 auto; }
+    header .kicker { color:var(--muted); font-size:15px; }
+    h1 { margin:4px 0 12px; color:var(--navy); font-size:30px; line-height:1.25; }
+    main { max-width:820px; margin:0 auto; padding:16px 20px 60px; }
+    .levelbar { position:sticky; top:0; z-index:5; background:var(--navy); color:#fff; }
+    .levelbar .inner { max-width:820px; margin:0 auto; padding:10px 20px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+    .levelbar .lbl { font-weight:700; font-size:16px; }
+    .levelbar .lbl [lang=uk] { font-weight:400; color:#C9D6E3; }
+    .levels { display:flex; gap:8px; flex-wrap:wrap; }
+    .levels button { border:2px solid #fff; background:transparent; color:#fff; padding:6px 16px; border-radius:20px; font-size:16px; cursor:pointer; font-family:inherit; }
+    .levels button[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:700; }
+    .hint { background:var(--soft); border-radius:10px; padding:10px 14px; font-size:15px; margin:12px 0 20px; }
+    .hint [lang=uk] { color:var(--muted); display:block; }
+    h2 { color:var(--navy); font-size:22px; margin:28px 0 6px; }
+    .term { font-weight:700; border-bottom:2px dotted var(--accent); cursor:help; }
+    .term:focus { outline:2px solid var(--accent); outline-offset:2px; }
+    #tip { position:absolute; z-index:10; display:none; background:var(--navy); color:#fff; border-radius:10px; padding:10px 12px; max-width:320px; box-shadow:0 4px 16px rgba(0,0,0,.2); font-size:16px; line-height:1.4; }
+    #tip .de { font-weight:700; }
+    #tip .art { color:#C9D6E3; font-size:14px; }
+    #tip .uk { margin:4px 0 8px; font-size:17px; }
+    #tip button, .say { font-family:inherit; font-size:14px; border:0; border-radius:14px; padding:4px 10px; cursor:pointer; }
+    #tip button { background:var(--accent); color:#fff; margin-right:6px; }
+    .say { background:var(--soft); color:var(--navy); border:1px solid var(--line); }
+    .say:hover { background:#e3e9ef; }
+    section.level { display:none; }
+    section.level.active { display:block; }
+    details { margin-top:40px; border-top:1px solid var(--line); padding-top:16px; }
+    summary { cursor:pointer; font-size:20px; color:var(--navy); font-weight:700; }
+    table { border-collapse:collapse; width:100%; margin-top:12px; font-size:16px; }
+    td { border-bottom:1px solid var(--line); padding:8px 6px; vertical-align:top; }
+    td .art { color:var(--muted); font-size:14px; }
+    td.aud { white-space:nowrap; }
+    #voicemsg { display:none; background:#FFF4E5; border-radius:8px; padding:8px 12px; font-size:15px; margin:10px 0; }
+    </style>
+    </head>
+    <body>
+    <header>
+      <div class="kicker">Kurs 0 · Modul 1 · Text 1 von 3 · passend zu Video 1</div>
+      <h1>Was macht ein Spediteur?</h1>
+    </header>
+    <nav class="levelbar" aria-label="Sprachniveau wählen">
+      <div class="inner">
+        <span class="lbl">Sprachniveau <span lang="uk">/ Рівень мови</span>:</span>
+        <div class="levels" role="group">
+          <button data-level="a2" aria-pressed="false">1 – einfach</button>
+          <button data-level="b1" aria-pressed="true">2 – mittel</button>
+          <button data-level="orig" aria-pressed="false">3 – schwer</button>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="hint">Fahre mit der Maus über ein <span class="term" style="cursor:default">markiertes Wort</span> oder tippe darauf. Du siehst die Übersetzung und kannst das Wort anhören.
+        <span lang="uk">Наведи курсор на <b>виділене слово</b> або торкнися його – побачиш переклад і зможеш прослухати слово.</span></div>
+      <div id="voicemsg"></div>
+      <section class="level active" id="b1"><h2>Einführung</h2>
+<p>Herzlich willkommen zur Einführung in <span class="term" tabindex="0" data-k="Spedition">Spedition</span> und <span class="term" tabindex="0" data-k="Logistik">Logistik</span> in Deutschland!</p>
+<p><span class="term" tabindex="0" data-k="Spediteur">Spediteure</span> sind die Architekten des <span class="term" tabindex="0" data-k="Güterverkehr">Güterverkehrs</span>. Sie ermöglichen den weltweiten Austausch von Gütern. Sie verbinden Industrieunternehmen, Händler, <span class="term" tabindex="0" data-k="Exporteur">Exporteure</span>, <span class="term" tabindex="0" data-k="Importeur">Importeure</span> und Konsumenten auf der ganzen Welt.</p>
+<h2>Was macht ein Spediteur?</h2>
+<p>Industrie- und Handelsunternehmen schließen nationale und internationale <span class="term" tabindex="0" data-k="Kaufvertrag">Kaufverträge</span>. Wenn Güter verkauft wurden, müssen sie vom <span class="term" tabindex="0" data-k="Verkäufer">Verkäufer</span> zum <span class="term" tabindex="0" data-k="Käufer">Käufer</span> geliefert werden. Hier kommen die Spediteure ins Spiel: Sie organisieren diese Transporte. Der Speditionsberuf ist vor allem ein Bürojob. Es geht um die Organisation von Transporten.</p>
+<p>Den eigentlichen Transport führen die <span class="term" tabindex="0" data-k="Frachtführer">Frachtführer</span> durch. Es gibt sie bei allen <span class="term" tabindex="0" data-k="Verkehrsträger">Verkehrsträgern</span>, und der Spediteur bucht seine Transporte bei ihnen. Im Straßenverkehr sind die Frachtführer die <span class="term" tabindex="0" data-k="Fuhrunternehmer">Fuhrunternehmer</span>. In der Seefracht sind es die <span class="term" tabindex="0" data-k="Reederei">Reedereien</span>, und in der Luftfracht nennen wir sie <span class="term" tabindex="0" data-k="Airline">Airlines</span>. Manchmal kommen die Güter von einem <span class="term" tabindex="0" data-k="Verkehrsmittel">Verkehrsmittel</span> auf ein anderes, zum Beispiel vom Lkw auf das Schiff. Das nennt man <span class="term" tabindex="0" data-k="Umschlag">Umschlag</span>.</p>
+<p>Einige Speditionen haben eigene Lkw oder eigene <span class="term" tabindex="0" data-k="Lager">Läger</span>. Wenn ein Spediteur die Güter selbst befördert, nennt man das <span class="term" tabindex="0" data-k="Selbsteintritt">Selbsteintritt</span>. Spediteure arbeiten also in den Bereichen <span class="term" tabindex="0" data-k="Transport">Transport</span>, <span class="term" tabindex="0" data-k="Umschlag">Umschlag</span> und <span class="term" tabindex="0" data-k="Lagerung">Lagerung</span>. Deshalb sprechen wir auch von <span class="term" tabindex="0" data-k="TUL-Logistik">TUL-Logistik</span>.</p></section>
+      <section class="level" id="a2"><h2>Einführung</h2>
+<p>Herzlich willkommen! In diesem Modul lernst du die Grundlagen von <span class="term" tabindex="0" data-k="Spedition">Spedition</span> und <span class="term" tabindex="0" data-k="Logistik">Logistik</span> in Deutschland.</p>
+<p><span class="term" tabindex="0" data-k="Spediteur">Spediteure</span> organisieren den <span class="term" tabindex="0" data-k="Güterverkehr">Güterverkehr</span>. Das sind Transporte von Waren in der ganzen Welt. Spediteure verbinden Firmen, Händler, <span class="term" tabindex="0" data-k="Exporteur">Exporteure</span>, <span class="term" tabindex="0" data-k="Importeur">Importeure</span> und Kunden.</p>
+<h2>Was macht ein Spediteur?</h2>
+<p>Eine Firma verkauft Ware an eine andere Firma. Dafür machen die Firmen einen <span class="term" tabindex="0" data-k="Kaufvertrag">Kaufvertrag</span>. Dann muss die Ware vom <span class="term" tabindex="0" data-k="Verkäufer">Verkäufer</span> zum <span class="term" tabindex="0" data-k="Käufer">Käufer</span> kommen. Der Spediteur organisiert diesen Transport. Er arbeitet vor allem im Büro.</p>
+<p>Den Transport selbst macht meistens der <span class="term" tabindex="0" data-k="Frachtführer">Frachtführer</span>. Der Spediteur bucht den Transport beim Frachtführer. Es gibt verschiedene <span class="term" tabindex="0" data-k="Verkehrsträger">Verkehrsträger</span>:</p>
+<ul><li>Straße: Der Frachtführer ist ein <span class="term" tabindex="0" data-k="Fuhrunternehmer">Fuhrunternehmer</span>. Er hat Lkw.</li><li>See: Der Frachtführer ist eine <span class="term" tabindex="0" data-k="Reederei">Reederei</span>. Sie hat Schiffe.</li><li>Luft: Der Frachtführer ist eine <span class="term" tabindex="0" data-k="Airline">Airline</span>. Sie hat Flugzeuge.</li></ul>
+<p>Oft wechselt die Ware das <span class="term" tabindex="0" data-k="Verkehrsmittel">Verkehrsmittel</span>, zum Beispiel vom Lkw auf das Schiff. Das heißt <span class="term" tabindex="0" data-k="Umschlag">Umschlag</span>.</p>
+<p>Manche Speditionen haben eigene Lkw oder ein eigenes <span class="term" tabindex="0" data-k="Lager">Lager</span> (Plural: <span class="term" tabindex="0" data-k="Lager">Läger</span>). Wenn der Spediteur die Ware selbst transportiert, heißt das <span class="term" tabindex="0" data-k="Selbsteintritt">Selbsteintritt</span>. Spediteure arbeiten also in drei Bereichen: <span class="term" tabindex="0" data-k="Transport">Transport</span>, <span class="term" tabindex="0" data-k="Umschlag">Umschlag</span> und <span class="term" tabindex="0" data-k="Lagerung">Lagerung</span>. Die Anfangsbuchstaben sind T, U und L. Deshalb sagen wir <span class="term" tabindex="0" data-k="TUL-Logistik">TUL-Logistik</span>.</p></section>
+      <section class="level" id="orig"><h2>Einführung</h2>
+<p>Herzlich willkommen zur Einführung in <span class="term" tabindex="0" data-k="Spedition">Spedition</span> und <span class="term" tabindex="0" data-k="Logistik">Logistik</span> in Deutschland.</p>
+<p><span class="term" tabindex="0" data-k="Spediteur">Spediteure</span> sind die Architekten des <span class="term" tabindex="0" data-k="Güterverkehr">Güterverkehrs</span>. Sie ermöglichen den weltweiten Austausch von Gütern und verbinden Industrieunternehmen, Händler, <span class="term" tabindex="0" data-k="Exporteur">Exporteure</span>, <span class="term" tabindex="0" data-k="Importeur">Importeure</span> und Konsumenten auf der ganzen Welt.</p>
+<h2>Was macht ein Spediteur?</h2>
+<p>Industrie- und Handelsunternehmen schließen nationale und internationale <span class="term" tabindex="0" data-k="Kaufvertrag">Kaufverträge</span>. Wann immer Güter verkauft wurden, müssen sie vom <span class="term" tabindex="0" data-k="Verkäufer">Verkäufer</span> an den <span class="term" tabindex="0" data-k="Käufer">Käufer</span> geliefert werden. Hier kommen Spediteure ins Spiel: Sie organisieren diese Transporte. Der Speditionsberuf ist dabei vor allem ein Bürojob, der sich mit der Transportorganisation beschäftigt.</p>
+<p>Den eigentlichen Transport führen die <span class="term" tabindex="0" data-k="Frachtführer">Frachtführer</span> der verschiedenen <span class="term" tabindex="0" data-k="Verkehrsträger">Verkehrsträger</span> durch, bei denen der Spediteur seine Transporte bucht. Diese Frachtführer sind im Straßenverkehr die <span class="term" tabindex="0" data-k="Fuhrunternehmer">Fuhrunternehmer</span>, in der Seefracht die <span class="term" tabindex="0" data-k="Reederei">Reedereien</span> und in der Luftfracht die <span class="term" tabindex="0" data-k="Airline">Airlines</span>. Die Übergabe transportierter Güter von einem <span class="term" tabindex="0" data-k="Verkehrsmittel">Verkehrsmittel</span> auf ein anderes nennt sich <span class="term" tabindex="0" data-k="Umschlag">Umschlag</span>.</p>
+<p>Einige Speditionen verfügen über eigene Lkw oder unterhalten eigene <span class="term" tabindex="0" data-k="Lager">Läger</span>. Wenn ein Spediteur Güter selbst befördert, nennt man das <span class="term" tabindex="0" data-k="Selbsteintritt">Selbsteintritt</span>. Spediteure beschäftigen sich also mit den Bereichen <span class="term" tabindex="0" data-k="Transport">Transport</span>, <span class="term" tabindex="0" data-k="Umschlag">Umschlag</span> und <span class="term" tabindex="0" data-k="Lagerung">Lagerung</span>. Daher sprechen wir auch von <span class="term" tabindex="0" data-k="TUL-Logistik">TUL-Logistik</span>.</p></section>
+      <details>
+        <summary>Fachbegriffe in diesem Text (21) – Deutsch – Українська</summary>
+        <table><tr><td><b>Airline</b><br><span class="art">die, -s</span></td><td lang="uk">авіакомпанія</td><td class="aud"><button class="say" data-say="Airline" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="авіакомпанія" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Exporteur</b><br><span class="art">der, -e</span></td><td lang="uk">експортер</td><td class="aud"><button class="say" data-say="Exporteur" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="експортер" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Frachtführer</b><br><span class="art">der, -</span></td><td lang="uk">перевізник</td><td class="aud"><button class="say" data-say="Frachtführer" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="перевізник" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Fuhrunternehmer</b><br><span class="art">der, -</span></td><td lang="uk">автоперевізник</td><td class="aud"><button class="say" data-say="Fuhrunternehmer" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="автоперевізник" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Güterverkehr</b><br><span class="art">der (nur Singular)</span></td><td lang="uk">вантажні перевезення</td><td class="aud"><button class="say" data-say="Güterverkehr" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="вантажні перевезення" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Importeur</b><br><span class="art">der, -e</span></td><td lang="uk">імпортер</td><td class="aud"><button class="say" data-say="Importeur" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="імпортер" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Kaufvertrag</b><br><span class="art">der, -verträge</span></td><td lang="uk">договір купівлі-продажу</td><td class="aud"><button class="say" data-say="Kaufvertrag" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="договір купівлі-продажу" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Käufer</b><br><span class="art">der, -</span></td><td lang="uk">покупець</td><td class="aud"><button class="say" data-say="Käufer" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="покупець" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Lager</b><br><span class="art">das, - / Läger</span></td><td lang="uk">склад</td><td class="aud"><button class="say" data-say="Lager" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="склад" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Lagerung</b><br><span class="art">die, -en</span></td><td lang="uk">складування; зберігання</td><td class="aud"><button class="say" data-say="Lagerung" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="складування; зберігання" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Logistik</b><br><span class="art">die (nur Singular)</span></td><td lang="uk">логістика</td><td class="aud"><button class="say" data-say="Logistik" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="логістика" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Reederei</b><br><span class="art">die, -en</span></td><td lang="uk">судноплавна компанія</td><td class="aud"><button class="say" data-say="Reederei" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="судноплавна компанія" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Selbsteintritt</b><br><span class="art">der (nur Singular)</span></td><td lang="uk">виконання перевезення самим експедитором</td><td class="aud"><button class="say" data-say="Selbsteintritt" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="виконання перевезення самим експедитором" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Spediteur</b><br><span class="art">der, -e</span></td><td lang="uk">експедитор</td><td class="aud"><button class="say" data-say="Spediteur" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="експедитор" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Spedition</b><br><span class="art">die, -en</span></td><td lang="uk">експедиторська компанія; транспортне експедирування</td><td class="aud"><button class="say" data-say="Spedition" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="експедиторська компанія; транспортне експедирування" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Transport</b><br><span class="art">der, -e</span></td><td lang="uk">перевезення; транспортування</td><td class="aud"><button class="say" data-say="Transport" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="перевезення; транспортування" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>TUL-Logistik</b><br><span class="art">die (nur Singular)</span></td><td lang="uk">TUL-логістика (транспортування, перевантаження та складування)</td><td class="aud"><button class="say" data-say="TUL-Logistik" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="TUL-логістика (транспортування, перевантаження та складування)" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Umschlag</b><br><span class="art">der (nur Singular)</span></td><td lang="uk">перевантаження</td><td class="aud"><button class="say" data-say="Umschlag" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="перевантаження" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Verkehrsmittel</b><br><span class="art">das, -</span></td><td lang="uk">транспортний засіб</td><td class="aud"><button class="say" data-say="Verkehrsmittel" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="транспортний засіб" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Verkehrsträger</b><br><span class="art">der, -</span></td><td lang="uk">вид транспорту</td><td class="aud"><button class="say" data-say="Verkehrsträger" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="вид транспорту" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Verkäufer</b><br><span class="art">der, -</span></td><td lang="uk">продавець</td><td class="aud"><button class="say" data-say="Verkäufer" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="продавець" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr></table>
+      </details>
+    </main>
+    <div id="tip" role="tooltip"></div>
+    <script>
+    const GL = {"Absender": {"art": "der, -", "uk": "відправник (вантажу)"}, "Agent": {"art": "der, -en", "uk": "агент (партнер-експедитор у країні імпорту)"}, "Air Waybill": {"art": "der, -s · Abk. AWB", "uk": "авіавантажна накладна"}, "Airline": {"art": "die, -s", "uk": "авіакомпанія"}, "Auftraggeber": {"art": "der, -", "uk": "замовник"}, "Ausfuhr": {"art": "die, -en", "uk": "експорт; вивезення"}, "Bill of Lading": {"art": "das, -s · Abk. B/L", "uk": "коносамент"}, "Carrier": {"art": "der, -", "uk": "перевізник"}, "CMR-Frachtbrief": {"art": "der, -e", "uk": "міжнародна товарно-транспортна накладна CMR"}, "Drittstaat": {"art": "der, -en", "uk": "третя країна"}, "Einfuhr": {"art": "die, -en", "uk": "імпорт; ввезення"}, "Empfänger": {"art": "der, -", "uk": "вантажоодержувач"}, "Export": {"art": "der, -e", "uk": "експорт"}, "Exporteur": {"art": "der, -e", "uk": "експортер"}, "Fracht": {"art": "die, -en", "uk": "вантаж"}, "Frachtführer": {"art": "der, -", "uk": "перевізник"}, "Frachtvertrag": {"art": "der, -verträge", "uk": "договір перевезення вантажу"}, "Fuhrunternehmer": {"art": "der, -", "uk": "автоперевізник"}, "Güter": {"art": "das Gut, die Güter (meist Plural)", "uk": "вантажі"}, "Güterverkehr": {"art": "der (nur Singular)", "uk": "вантажні перевезення"}, "Handelsrechnung": {"art": "die, -en", "uk": "комерційний рахунок (інвойс)"}, "Import": {"art": "der, -e", "uk": "імпорт"}, "Importabfertigung": {"art": "die, -en", "uk": "імпортне митне оформлення"}, "Importeur": {"art": "der, -e", "uk": "імпортер"}, "internationaler Transport": {"art": "der, -e", "uk": "міжнародне перевезення"}, "Käufer": {"art": "der, -", "uk": "покупець"}, "Kaufvertrag": {"art": "der, -verträge", "uk": "договір купівлі-продажу"}, "Ladung": {"art": "die, -en", "uk": "вантаж"}, "Lager": {"art": "das, - / Läger", "uk": "склад"}, "Lagerung": {"art": "die, -en", "uk": "складування; зберігання"}, "Logistik": {"art": "die (nur Singular)", "uk": "логістика"}, "nationaler Transport": {"art": "der, -e", "uk": "внутрішнє перевезення"}, "Niederlassung": {"art": "die, -en", "uk": "філія"}, "Packliste": {"art": "die, -n", "uk": "пакувальний лист"}, "Packstück": {"art": "das, -e", "uk": "вантажне місце"}, "Reederei": {"art": "die, -en", "uk": "судноплавна компанія"}, "Selbsteintritt": {"art": "der (nur Singular)", "uk": "виконання перевезення самим експедитором"}, "Sendung": {"art": "die, -en", "uk": "вантажне відправлення; партія вантажу"}, "Spediteur": {"art": "der, -e", "uk": "експедитор"}, "Spedition": {"art": "die, -en", "uk": "експедиторська компанія; транспортне експедирування"}, "Speditionsvertrag": {"art": "der, -verträge", "uk": "договір транспортного експедирування"}, "Transport": {"art": "der, -e", "uk": "перевезення; транспортування"}, "TUL-Logistik": {"art": "die (nur Singular)", "uk": "TUL-логістика (транспортування, перевантаження та складування)"}, "Umschlag": {"art": "der (nur Singular)", "uk": "перевантаження"}, "Umschlagsunternehmen": {"art": "das, -", "uk": "компанія з перевантаження (вантажів)"}, "Verkehrsmittel": {"art": "das, -", "uk": "транспортний засіб"}, "Verkehrsträger": {"art": "der, -", "uk": "вид транспорту"}, "Verkäufer": {"art": "der, -", "uk": "продавець"}, "Versender": {"art": "der, -", "uk": "вантажовідправник"}, "Vertragspartei": {"art": "die, -en", "uk": "сторона договору"}, "Ware": {"art": "die, -n", "uk": "товар"}, "Zollabfertigung": {"art": "die, -en", "uk": "митне оформлення"}, "Zollbehörde": {"art": "die, -n", "uk": "митний орган; митниця"}, "Zollgebiet": {"art": "das, -e", "uk": "митна територія"}, "Zollunion": {"art": "die, -en", "uk": "митний союз"}, "Zustellung": {"art": "die, -en", "uk": "доставка (вантажоодержувачу)"}};
+    // Fassung umschalten
+    document.querySelectorAll('.levels button').forEach(b => b.addEventListener('click', () => {
+      document.querySelectorAll('.levels button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      document.querySelectorAll('section.level').forEach(s => s.classList.toggle('active', s.id === b.dataset.level));
+      hideTip(true);
+      window.scrollTo({top:0});
+    }));
+    // Sprachausgabe
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis ? speechSynthesis.getVoices() : []; }
+    if (window.speechSynthesis) { loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+    function say(text, lang) {
+      const msg = document.getElementById('voicemsg');
+      if (!window.speechSynthesis) { msg.textContent = 'Dieser Browser unterstützt keine Sprachausgabe.'; msg.style.display = 'block'; return; }
+      const code = lang === 'uk' ? 'uk' : 'de';
+      const v = voices.find(x => x.lang && x.lang.toLowerCase().startsWith(code));
+      if (!v && code === 'uk') {
+        msg.textContent = 'Auf diesem Gerät ist keine ukrainische Stimme installiert. / На цьому пристрої не встановлено українського голосу.';
+        msg.style.display = 'block'; return;
+      }
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = code === 'uk' ? 'uk-UA' : 'de-DE';
+      if (v) u.voice = v;
+      u.rate = 0.9;
+      speechSynthesis.speak(u);
+    }
+    document.addEventListener('click', e => {
+      const b = e.target.closest('[data-say]');
+      if (b) say(b.dataset.say, b.dataset.lang);
+    });
+    // Tooltip
+    const tip = document.getElementById('tip');
+    let pinned = null, hideTimer = null;
+    function showTip(el) {
+      clearTimeout(hideTimer);
+      const k = el.dataset.k, g = GL[k];
+      tip.innerHTML = '<div class="de">' + k + '</div><div class="art">' + g.art + '</div><div class="uk" lang="uk">' + g.uk + '</div>' +
+        '<button data-say="' + k + '" data-lang="de">DE ▶</button><button data-say="' + g.uk + '" data-lang="uk">UA ▶</button>';
+      tip.style.display = 'block';
+      const r = el.getBoundingClientRect();
+      let left = r.left + window.scrollX;
+      const maxLeft = window.scrollX + document.documentElement.clientWidth - tip.offsetWidth - 8;
+      tip.style.left = Math.max(8, Math.min(left, maxLeft)) + 'px';
+      tip.style.top = (r.bottom + window.scrollY + 6) + 'px';
+    }
+    function hideTip(force) {
+      if (pinned && !force) return;
+      pinned = null;
+      tip.style.display = 'none';
+    }
+    document.querySelectorAll('section .term').forEach(el => {
+      el.addEventListener('mouseenter', () => { if (!pinned) showTip(el); });
+      el.addEventListener('mouseleave', () => { hideTimer = setTimeout(() => hideTip(false), 300); });
+      el.addEventListener('focus', () => showTip(el));
+      el.addEventListener('click', e => { e.stopPropagation(); pinned = el; showTip(el); });
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pinned = el; showTip(el); } });
+    });
+    tip.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+    tip.addEventListener('mouseleave', () => { hideTimer = setTimeout(() => hideTip(false), 300); });
+    document.addEventListener('click', e => { if (!e.target.closest('#tip') && !e.target.closest('.term')) hideTip(true); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') hideTip(true); });
+    </script>
+    </body>
+    </html>

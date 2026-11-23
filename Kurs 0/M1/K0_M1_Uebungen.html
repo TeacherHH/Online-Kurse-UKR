@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kurs 0 · Modul 1 – Übungen</title>
+<style>
+:root { --ink:#1E2A36; --navy:#1F3A5F; --accent:#E07A1F; --soft:#F1F4F7; --line:#D5DDE5; --muted:#5B7A99; --ok:#2E7D5B; --okbg:#E5F4E4; --bad:#B23A3A; --badbg:#FBEBEB; }
+* { box-sizing:border-box; }
+body { margin:0; font-family: Calibri, "Segoe UI", Arial, sans-serif; color:var(--ink); line-height:1.5; font-size:18px; }
+header, main { max-width:860px; margin:0 auto; padding:0 20px; }
+header { padding-top:24px; }
+.kicker { color:var(--muted); font-size:15px; }
+h1 { color:var(--navy); margin:4px 0 16px; font-size:30px; }
+.card { background:var(--soft); border-radius:14px; padding:18px 20px; margin:0 0 24px; }
+.card h2 { margin:0 0 6px; color:var(--navy); font-size:22px; }
+.instr { margin:0 0 14px; }
+.instr [lang=uk] { display:block; color:var(--muted); font-size:16px; }
+.row { display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:8px 10px; border-radius:8px; background:#fff; margin-bottom:8px; border:2px solid transparent; }
+.row .q { flex:1 1 260px; }
+.row.ok { border-color:var(--ok); background:var(--okbg); }
+.row.bad { border-color:var(--bad); background:var(--badbg); }
+.why { flex-basis:100%; font-size:15px; color:var(--ink); display:none; }
+.row.checked .why { display:block; }
+select { font-family:inherit; font-size:17px; padding:4px 8px; border-radius:6px; border:1px solid var(--line); background:#fff; max-width:100%; }
+.opts { display:flex; gap:6px; flex-wrap:wrap; }
+.opt, .mbtn { font-family:inherit; font-size:16px; padding:6px 14px; border-radius:18px; border:2px solid var(--navy); background:#fff; color:var(--navy); cursor:pointer; }
+.opt[aria-pressed=true] { background:var(--navy); color:#fff; }
+.gapsel { margin:0 4px; }
+.match { display:grid; grid-template-columns:1fr 1fr; gap:10px 20px; }
+.match .col { display:flex; flex-direction:column; gap:8px; }
+.mbtn { text-align:left; border-radius:8px; }
+.mbtn.sel { background:var(--accent); border-color:var(--accent); color:#fff; }
+.mbtn.done { border-color:var(--ok); background:var(--okbg); color:var(--ok); cursor:default; }
+.mbtn.wrong { border-color:var(--bad); background:var(--badbg); }
+.actions { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+.actions button { font-family:inherit; font-size:16px; padding:8px 18px; border-radius:20px; cursor:pointer; border:0; }
+.check { background:var(--navy); color:#fff; }
+.solve, .reset { background:#fff; color:var(--navy); border:1px solid var(--line) !important; }
+.score { font-weight:700; }
+#total { background:var(--navy); color:#fff; border-radius:14px; padding:16px 20px; margin-bottom:40px; font-size:20px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Kurs 0 · Modul 1</div>
+  <h1>Übungen: Einführung in Spedition und Logistik</h1>
+</header>
+<main id="app"></main>
+<main><div id="total">Gesamt: 0 von 0 Punkten</div></main>
+<script>
+const EX = [{"id": "u1", "type": "select", "title": "Übung 1 · Wer transportiert – mit welchem Dokument?", "de": "Wähle für jeden Verkehrsträger den Frachtführer und das Transportdokument.", "uk": "Обери для кожного виду транспорту перевізника та транспортний документ.", "items": [{"q": "Straße – Frachtführer", "opts": ["Fuhrunternehmer", "Reederei", "Airline"], "a": "Fuhrunternehmer"}, {"q": "Straße – Dokument", "opts": ["CMR-Frachtbrief", "Bill of Lading", "Air Waybill"], "a": "CMR-Frachtbrief"}, {"q": "See – Frachtführer", "opts": ["Fuhrunternehmer", "Reederei", "Airline"], "a": "Reederei"}, {"q": "See – Dokument", "opts": ["CMR-Frachtbrief", "Bill of Lading", "Air Waybill"], "a": "Bill of Lading"}, {"q": "Luft – Frachtführer", "opts": ["Fuhrunternehmer", "Reederei", "Airline"], "a": "Airline"}, {"q": "Luft – Dokument", "opts": ["CMR-Frachtbrief", "Bill of Lading", "Air Waybill"], "a": "Air Waybill"}]}, {"id": "u2", "type": "buttons", "title": "Übung 2 · Wer sagt was?", "de": "Wer benutzt das Wort? Klicke auf Händler, Spediteur oder Frachtführer.", "uk": "Хто вживає це слово? Натисни: торговець, експедитор чи перевізник.", "opts": ["Händler", "Spediteur", "Frachtführer"], "items": [{"q": "die Ware", "a": "Händler"}, {"q": "die Güter", "a": "Spediteur"}, {"q": "die Sendung", "a": "Spediteur"}, {"q": "das Packstück", "a": "Spediteur"}, {"q": "die Fracht", "a": "Frachtführer"}, {"q": "die Ladung", "a": "Frachtführer"}]}, {"id": "u3", "type": "gap", "title": "Übung 3 · Lückentext", "de": "Ergänze die Sätze mit dem richtigen Fachbegriff. Jeder Begriff passt genau einmal.", "uk": "Доповни речення правильним фаховим терміном. Кожен термін підходить лише один раз.", "bank": ["Absender", "Agent", "Drittstaat", "Frachtführer", "Packliste", "Selbsteintritt", "Speditionsvertrag", "TUL-Logistik", "Umschlag", "Zollunion"], "items": [{"q": "Den eigentlichen Transport führt der ___ durch.", "a": "Frachtführer"}, {"q": "Wechseln die Güter das Verkehrsmittel, nennt man das ___.", "a": "Umschlag"}, {"q": "Befördert der Spediteur die Güter selbst, heißt das ___.", "a": "Selbsteintritt"}, {"q": "Transport, Umschlag und Lagerung: Das ist die ___.", "a": "TUL-Logistik"}, {"q": "Die Europäische Union ist eine ___.", "a": "Zollunion"}, {"q": "Ein Land außerhalb der EU nennen wir ___.", "a": "Drittstaat"}, {"q": "Im ___ regeln Versender und Spediteur die Details des Transports.", "a": "Speditionsvertrag"}, {"q": "Im Frachtvertrag ist der Spediteur selbst der ___.", "a": "Absender"}, {"q": "Der Partner des Spediteurs im Importland heißt ___.", "a": "Agent"}, {"q": "Die Handelsrechnung und die ___ stellt der Verkäufer aus.", "a": "Packliste"}]}, {"id": "u4", "type": "buttons", "title": "Übung 4 · Richtig oder falsch?", "de": "Lies die Aussagen. Sind sie richtig oder falsch?", "uk": "Прочитай твердження. Вони правильні чи неправильні?", "opts": ["richtig", "falsch"], "items": [{"q": "Der Spediteur führt den Transport normalerweise selbst durch.", "a": "falsch", "why": "Der Spediteur organisiert den Transport. Den Transport selbst führt der Frachtführer durch (Ausnahme: Selbsteintritt)."}, {"q": "In der Seefracht ist die Reederei der Frachtführer.", "a": "richtig", "why": "Straße: Fuhrunternehmer, See: Reederei, Luft: Airline."}, {"q": "Für einen Transport von München nach Paris braucht man grundsätzlich keine Zollabfertigung.", "a": "richtig", "why": "Deutschland und Frankreich gehören zur EU, also zum gemeinsamen Zollgebiet."}, {"q": "Ein Export ist ein Transport aus einem Drittstaat in die EU.", "a": "falsch", "why": "Das ist ein Import. Export: aus der EU in einen Drittstaat."}, {"q": "Den Frachtvertrag schließen der Versender und der Spediteur.", "a": "falsch", "why": "Versender und Spediteur schließen den Speditionsvertrag. Den Frachtvertrag schließen Spediteur und Frachtführer."}, {"q": "Der Agent kann eine Niederlassung der eigenen Firma sein.", "a": "richtig", "why": "Der Agent ist eine Niederlassung oder ein externes Unternehmen."}, {"q": "Die Handelsrechnung stellt der Spediteur aus.", "a": "falsch", "why": "Handelsrechnung und Packliste stellt der Verkäufer aus."}, {"q": "Eine Sendung kann aus mehreren Packstücken bestehen.", "a": "richtig", "why": "Zum Beispiel aus mehreren Kartons oder Paletten."}]}, {"id": "u5", "type": "match", "title": "Übung 5 · Wörter verbinden", "de": "Klicke zuerst auf ein deutsches Wort, dann auf die passende ukrainische Übersetzung.", "uk": "Спочатку натисни на німецьке слово, потім на відповідний український переклад.", "items": [{"q": "der Spediteur", "a": "експедитор"}, {"q": "der Frachtführer", "a": "перевізник"}, {"q": "die Sendung", "a": "вантажне відправлення"}, {"q": "das Packstück", "a": "вантажне місце"}, {"q": "die Zollabfertigung", "a": "митне оформлення"}, {"q": "der Empfänger", "a": "вантажоодержувач"}, {"q": "die Handelsrechnung", "a": "комерційний рахунок (інвойс)"}, {"q": "das Lager", "a": "склад"}]}, {"id": "u6", "type": "buttons", "title": "Übung 6 · Export, Import oder kein Zoll?", "de": "Ein Transport geht von A nach B. Was ist das aus Sicht der EU?", "uk": "Перевезення йде з пункту A до пункту B. Що це з погляду ЄС?", "opts": ["Export", "Import", "innerhalb der EU"], "items": [{"q": "Hamburg → New York", "a": "Export", "why": "Die USA sind ein Drittstaat. Die Güter verlassen die EU."}, {"q": "Shanghai → Bremen", "a": "Import", "why": "China ist ein Drittstaat. Die Güter kommen in die EU."}, {"q": "München → Paris", "a": "innerhalb der EU", "why": "Beide Länder sind in der EU: grundsätzlich keine Zollabfertigung."}, {"q": "Kyjiw → Berlin", "a": "Import", "why": "Die Ukraine gehört nicht zur EU, sie ist ein Drittstaat."}, {"q": "Hamburg → Warschau", "a": "innerhalb der EU", "why": "Polen ist ein EU-Land."}, {"q": "Rotterdam → Oslo", "a": "Export", "why": "Norwegen gehört nicht zur EU, es ist ein Drittstaat."}, {"q": "Zürich → Stuttgart", "a": "Import", "why": "Die Schweiz gehört nicht zur EU, sie ist ein Drittstaat."}]}];
+const state = {};
+function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function el(tag, attrs, html) { const e = document.createElement(tag); Object.assign(e, attrs || {}); if (html !== undefined) e.innerHTML = html; return e; }
+function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+function build(ex) {
+  const card = el('section', {className: 'card', id: ex.id});
+  card.append(el('h2', {}, esc(ex.title)));
+  card.append(el('p', {className: 'instr'}, esc(ex.de) + '<span lang="uk">' + esc(ex.uk) + '</span>'));
+  const box = el('div'); card.append(box);
+  state[ex.id] = {score: 0, max: ex.items.length};
+  if (ex.type === 'select' || ex.type === 'gap') {
+    ex.items.forEach((it, i) => {
+      const row = el('div', {className: 'row'});
+      const opts = ex.type === 'gap' ? ex.bank : it.opts;
+      const sel = '<select data-i="' + i + '"><option value="">– wählen –</option>' + opts.map(o => '<option>' + esc(o) + '</option>').join('') + '</select>';
+      if (ex.type === 'gap') row.append(el('div', {className: 'q'}, (i + 1) + '. ' + esc(it.q).replace('___', '<span class="gapsel">' + sel + '</span>')));
+      else { row.append(el('div', {className: 'q'}, esc(it.q))); row.insertAdjacentHTML('beforeend', sel); }
+      box.append(row);
+    });
+  } else if (ex.type === 'buttons') {
+    ex.items.forEach((it, i) => {
+      const row = el('div', {className: 'row'});
+      row.append(el('div', {className: 'q'}, esc(it.q)));
+      const o = el('div', {className: 'opts'});
+      ex.opts.forEach(op => {
+        const b = el('button', {className: 'opt', type: 'button'}, esc(op));
+        b.setAttribute('aria-pressed', 'false'); b.dataset.v = op; b.dataset.i = i;
+        b.onclick = () => { o.querySelectorAll('.opt').forEach(x => x.setAttribute('aria-pressed', x === b)); };
+        o.append(b);
+      });
+      row.append(o);
+      if (it.why) row.append(el('div', {className: 'why'}, esc(it.why)));
+      box.append(row);
+    });
+  } else if (ex.type === 'match') {
+    const m = el('div', {className: 'match'});
+    const L = el('div', {className: 'col'}), R = el('div', {className: 'col'});
+    let pick = null;
+    shuffle(ex.items).forEach(it => { const b = el('button', {className: 'mbtn', type: 'button'}, esc(it.q)); b.dataset.k = it.q; L.append(b); });
+    shuffle(ex.items).forEach(it => { const b = el('button', {className: 'mbtn', type: 'button', lang: 'uk'}, esc(it.a)); b.dataset.k = it.q; R.append(b); });
+    L.onclick = e => { const b = e.target.closest('.mbtn'); if (!b || b.classList.contains('done')) return; L.querySelectorAll('.mbtn').forEach(x => x.classList.remove('sel')); b.classList.add('sel'); pick = b; };
+    R.onclick = e => {
+      const b = e.target.closest('.mbtn'); if (!b || !pick || b.classList.contains('done')) return;
+      if (b.dataset.k === pick.dataset.k) { b.classList.add('done'); pick.classList.add('done'); pick.classList.remove('sel'); pick = null; }
+      else { b.classList.add('wrong'); setTimeout(() => b.classList.remove('wrong'), 600); state[ex.id].errors = (state[ex.id].errors || 0) + 1; }
+      updateMatch(ex, card);
+    };
+    m.append(L, R); box.append(m);
+  }
+  const act = el('div', {className: 'actions'});
+  const score = el('span', {className: 'score'});
+  if (ex.type !== 'match') {
+    const c = el('button', {className: 'check', type: 'button'}, 'Prüfen'); c.onclick = () => check(ex, card, score); act.append(c);
+    const s = el('button', {className: 'solve', type: 'button'}, 'Lösung zeigen'); s.onclick = () => solve(ex, card, score); act.append(s);
+  }
+  const r = el('button', {className: 'reset', type: 'button'}, 'Neu starten');
+  r.onclick = () => { const n = build(ex); card.replaceWith(n); state[ex.id].score = 0; total(); };
+  act.append(r, score);
+  card.append(act);
+  card._score = score;
+  return card;
+}
+function answerOf(ex, card, i) {
+  if (ex.type === 'buttons') { const b = card.querySelector('.opt[data-i="' + i + '"][aria-pressed="true"]'); return b ? b.dataset.v : ''; }
+  return card.querySelector('select[data-i="' + i + '"]').value;
+}
+function check(ex, card, score) {
+  let n = 0;
+  card.querySelectorAll('.row').forEach((row, i) => {
+    const ok = answerOf(ex, card, i) === ex.items[i].a;
+    row.classList.toggle('ok', ok); row.classList.toggle('bad', !ok); row.classList.add('checked');
+    if (ok) n++;
+  });
+  state[ex.id].score = n;
+  score.textContent = n + ' von ' + ex.items.length + ' richtig';
+  total();
+}
+function solve(ex, card, score) {
+  ex.items.forEach((it, i) => {
+    if (ex.type === 'buttons') card.querySelectorAll('.opt[data-i="' + i + '"]').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === it.a));
+    else card.querySelector('select[data-i="' + i + '"]').value = it.a;
+  });
+  card.querySelectorAll('.row').forEach(r => { r.classList.remove('bad'); r.classList.add('ok', 'checked'); });
+  score.textContent = 'Lösung angezeigt';
+}
+function updateMatch(ex, card) {
+  const done = card.querySelectorAll('.col:first-child .mbtn.done').length;
+  state[ex.id].score = Math.max(0, done - (state[ex.id].errors || 0));
+  card._score.textContent = done + ' von ' + ex.items.length + ' verbunden' + (state[ex.id].errors ? ' · ' + state[ex.id].errors + ' Fehlversuche' : '');
+  total();
+}
+function total() {
+  let s = 0, m = 0; for (const k in state) { s += state[k].score; m += state[k].max; }
+  document.getElementById('total').textContent = 'Gesamt: ' + s + ' von ' + m + ' Punkten';
+}
+const app = document.getElementById('app');
+EX.forEach(ex => app.append(build(ex)));
+total();
+</script>
+</body>
+</html>

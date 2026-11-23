@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+    <html lang="de">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kurs 0 · Modul 1 – Text 2: Die Sprache der Spedition und der Zoll</title>
+    <style>
+    :root { --ink:#1E2A36; --navy:#1F3A5F; --accent:#E07A1F; --soft:#F1F4F7; --line:#D5DDE5; --muted:#5B7A99; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: Calibri, "Segoe UI", Arial, sans-serif; color:var(--ink); background:#fff; line-height:1.6; font-size:18px; }
+    header { padding:24px 20px 8px; max-width:820px; margin:0 auto; }
+    header .kicker { color:var(--muted); font-size:15px; }
+    h1 { margin:4px 0 12px; color:var(--navy); font-size:30px; line-height:1.25; }
+    main { max-width:820px; margin:0 auto; padding:16px 20px 60px; }
+    .levelbar { position:sticky; top:0; z-index:5; background:var(--navy); color:#fff; }
+    .levelbar .inner { max-width:820px; margin:0 auto; padding:10px 20px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+    .levelbar .lbl { font-weight:700; font-size:16px; }
+    .levelbar .lbl [lang=uk] { font-weight:400; color:#C9D6E3; }
+    .levels { display:flex; gap:8px; flex-wrap:wrap; }
+    .levels button { border:2px solid #fff; background:transparent; color:#fff; padding:6px 16px; border-radius:20px; font-size:16px; cursor:pointer; font-family:inherit; }
+    .levels button[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:700; }
+    .hint { background:var(--soft); border-radius:10px; padding:10px 14px; font-size:15px; margin:12px 0 20px; }
+    .hint [lang=uk] { color:var(--muted); display:block; }
+    h2 { color:var(--navy); font-size:22px; margin:28px 0 6px; }
+    .term { font-weight:700; border-bottom:2px dotted var(--accent); cursor:help; }
+    .term:focus { outline:2px solid var(--accent); outline-offset:2px; }
+    #tip { position:absolute; z-index:10; display:none; background:var(--navy); color:#fff; border-radius:10px; padding:10px 12px; max-width:320px; box-shadow:0 4px 16px rgba(0,0,0,.2); font-size:16px; line-height:1.4; }
+    #tip .de { font-weight:700; }
+    #tip .art { color:#C9D6E3; font-size:14px; }
+    #tip .uk { margin:4px 0 8px; font-size:17px; }
+    #tip button, .say { font-family:inherit; font-size:14px; border:0; border-radius:14px; padding:4px 10px; cursor:pointer; }
+    #tip button { background:var(--accent); color:#fff; margin-right:6px; }
+    .say { background:var(--soft); color:var(--navy); border:1px solid var(--line); }
+    .say:hover { background:#e3e9ef; }
+    section.level { display:none; }
+    section.level.active { display:block; }
+    details { margin-top:40px; border-top:1px solid var(--line); padding-top:16px; }
+    summary { cursor:pointer; font-size:20px; color:var(--navy); font-weight:700; }
+    table { border-collapse:collapse; width:100%; margin-top:12px; font-size:16px; }
+    td { border-bottom:1px solid var(--line); padding:8px 6px; vertical-align:top; }
+    td .art { color:var(--muted); font-size:14px; }
+    td.aud { white-space:nowrap; }
+    #voicemsg { display:none; background:#FFF4E5; border-radius:8px; padding:8px 12px; font-size:15px; margin:10px 0; }
+    </style>
+    </head>
+    <body>
+    <header>
+      <div class="kicker">Kurs 0 · Modul 1 · Text 2 von 3 · passend zu Video 2</div>
+      <h1>Die Sprache der Spedition und der Zoll</h1>
+    </header>
+    <nav class="levelbar" aria-label="Sprachniveau wählen">
+      <div class="inner">
+        <span class="lbl">Sprachniveau <span lang="uk">/ Рівень мови</span>:</span>
+        <div class="levels" role="group">
+          <button data-level="a2" aria-pressed="false">1 – einfach</button>
+          <button data-level="b1" aria-pressed="true">2 – mittel</button>
+          <button data-level="orig" aria-pressed="false">3 – schwer</button>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="hint">Fahre mit der Maus über ein <span class="term" style="cursor:default">markiertes Wort</span> oder tippe darauf. Du siehst die Übersetzung und kannst das Wort anhören.
+        <span lang="uk">Наведи курсор на <b>виділене слово</b> або торкнися його – побачиш переклад і зможеш прослухати слово.</span></div>
+      <div id="voicemsg"></div>
+      <section class="level active" id="b1"><h2>Die Sprache der Spedition</h2>
+<p>Jeder Beruf hat seine eigene Sprache. Handelsunternehmen kaufen und verkaufen <span class="term" tabindex="0" data-k="Ware">Ware</span>. Wenn diese Ware transportiert wird, spricht der Spediteur allgemein von <span class="term" tabindex="0" data-k="Güter">Gütern</span>. Die Güter eines bestimmten Transports nennen wir <span class="term" tabindex="0" data-k="Sendung">Sendung</span>. Eine Sendung kann aus mehreren <span class="term" tabindex="0" data-k="Packstück">Packstücken</span> bestehen. Die Frachtführer nennen die geladenen Güter dagegen <span class="term" tabindex="0" data-k="Fracht">Fracht</span> oder <span class="term" tabindex="0" data-k="Ladung">Ladung</span>. Welches Wort richtig ist, hängt also von der Position ab: Händler, Spediteur oder Frachtführer.</p>
+<h2>National, international und der Zoll</h2>
+<p><span class="term" tabindex="0" data-k="nationaler Transport">Nationale Transporte</span> sind Transporte innerhalb eines Landes, also zum Beispiel innerhalb Deutschlands. <span class="term" tabindex="0" data-k="internationaler Transport">Internationale Transporte</span> gehen über Landesgrenzen hinweg.</p>
+<p>Die Europäische Union ist eine <span class="term" tabindex="0" data-k="Zollunion">Zollunion</span>. Das heißt: Alle EU-Länder bilden ein gemeinsames <span class="term" tabindex="0" data-k="Zollgebiet">Zollgebiet</span>. Eine <span class="term" tabindex="0" data-k="Zollabfertigung">Zollabfertigung</span> ist deshalb nur notwendig, wenn Güter die EU-Außengrenze überschreiten. Ein Land außerhalb der EU nennen wir <span class="term" tabindex="0" data-k="Drittstaat">Drittstaat</span>. Ein Transport aus einem EU-Land in einen Drittstaat heißt <span class="term" tabindex="0" data-k="Export">Export</span>, im Zollrecht sagt man <span class="term" tabindex="0" data-k="Ausfuhr">Ausfuhr</span>. Von <span class="term" tabindex="0" data-k="Import">Import</span> oder <span class="term" tabindex="0" data-k="Einfuhr">Einfuhr</span> sprechen wir, wenn Güter aus einem Drittstaat in die EU kommen. Für Transporte innerhalb der EU braucht man grundsätzlich keine Zollabfertigung.</p></section>
+      <section class="level" id="a2"><h2>Die Sprache der Spedition</h2>
+<p>Jeder Beruf hat eigene Wörter. Hier ist es wichtig, wer spricht:</p>
+<ul><li>Der Händler kauft und verkauft <span class="term" tabindex="0" data-k="Ware">Ware</span>.</li><li>Der Spediteur sagt <span class="term" tabindex="0" data-k="Güter">Güter</span>. Die Güter für einen Transport sind eine <span class="term" tabindex="0" data-k="Sendung">Sendung</span>. Eine Sendung hat oft mehrere <span class="term" tabindex="0" data-k="Packstück">Packstücke</span>, zum Beispiel Kartons oder Paletten.</li><li>Der Frachtführer sagt <span class="term" tabindex="0" data-k="Fracht">Fracht</span> oder <span class="term" tabindex="0" data-k="Ladung">Ladung</span>.</li></ul>
+<h2>National, international und der Zoll</h2>
+<p>Ein <span class="term" tabindex="0" data-k="nationaler Transport">nationaler Transport</span> bleibt in einem Land, zum Beispiel in Deutschland. Ein <span class="term" tabindex="0" data-k="internationaler Transport">internationaler Transport</span> geht über eine Grenze.</p>
+<p>Die EU ist eine <span class="term" tabindex="0" data-k="Zollunion">Zollunion</span>. Das bedeutet: Alle EU-Länder sind zusammen ein <span class="term" tabindex="0" data-k="Zollgebiet">Zollgebiet</span>. Ein Land außerhalb der EU heißt <span class="term" tabindex="0" data-k="Drittstaat">Drittstaat</span>. Eine <span class="term" tabindex="0" data-k="Zollabfertigung">Zollabfertigung</span> brauchst du nur, wenn die Ware über die EU-Außengrenze geht.</p>
+<ul><li><span class="term" tabindex="0" data-k="Export">Export</span> oder <span class="term" tabindex="0" data-k="Ausfuhr">Ausfuhr</span>: Die Ware geht aus der EU in einen Drittstaat.</li><li><span class="term" tabindex="0" data-k="Import">Import</span> oder <span class="term" tabindex="0" data-k="Einfuhr">Einfuhr</span>: Die Ware kommt aus einem Drittstaat in die EU.</li><li>Innerhalb der EU braucht man grundsätzlich keine Zollabfertigung.</li></ul></section>
+      <section class="level" id="orig"><h2>Die Sprache der Spedition</h2>
+<p>Jeder Beruf hat seine eigene Sprache. Handelsunternehmen kaufen und verkaufen <span class="term" tabindex="0" data-k="Ware">Ware</span>. Wenn diese Ware transportiert wird, spricht der Spediteur allgemein von <span class="term" tabindex="0" data-k="Güter">Gütern</span>. Die spezifischen Güter eines Transports nennen wir <span class="term" tabindex="0" data-k="Sendung">Sendung</span>. Eine Sendung kann aus mehreren <span class="term" tabindex="0" data-k="Packstück">Packstücken</span> bestehen. Die Frachtführer wiederum nennen geladene Güter <span class="term" tabindex="0" data-k="Fracht">Fracht</span> oder <span class="term" tabindex="0" data-k="Ladung">Ladung</span>. Es kommt also darauf an, welche Position man einnimmt, um die richtigen Begriffe zu finden.</p>
+<h2>National, international und der Zoll</h2>
+<p><span class="term" tabindex="0" data-k="nationaler Transport">Nationale Transporte</span> sind Transporte innerhalb eines Landes, also zum Beispiel innerhalb Deutschlands. <span class="term" tabindex="0" data-k="internationaler Transport">Internationale Transporte</span> gehen über Landesgrenzen hinweg.</p>
+<p>Die Europäische Union ist eine <span class="term" tabindex="0" data-k="Zollunion">Zollunion</span>, das heißt: Alle EU-Länder bilden ein gemeinsames <span class="term" tabindex="0" data-k="Zollgebiet">Zollgebiet</span>. Eine <span class="term" tabindex="0" data-k="Zollabfertigung">Zollabfertigung</span> ist deshalb nur notwendig, wenn Güter die EU-Außengrenze überschreiten. Ein Transport aus einem EU-Land in einen <span class="term" tabindex="0" data-k="Drittstaat">Drittstaat</span> heißt <span class="term" tabindex="0" data-k="Export">Export</span>, zollrechtlich <span class="term" tabindex="0" data-k="Ausfuhr">Ausfuhr</span>. Von <span class="term" tabindex="0" data-k="Import">Import</span> oder <span class="term" tabindex="0" data-k="Einfuhr">Einfuhr</span> sprechen wir, wenn Güter aus einem Drittstaat in die EU transportiert werden. Für Transporte innerhalb der EU ist grundsätzlich keine Zollabfertigung notwendig.</p></section>
+      <details>
+        <summary>Fachbegriffe in diesem Text (16) – Deutsch – Українська</summary>
+        <table><tr><td><b>Ausfuhr</b><br><span class="art">die, -en</span></td><td lang="uk">експорт; вивезення</td><td class="aud"><button class="say" data-say="Ausfuhr" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="експорт; вивезення" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Drittstaat</b><br><span class="art">der, -en</span></td><td lang="uk">третя країна</td><td class="aud"><button class="say" data-say="Drittstaat" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="третя країна" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Einfuhr</b><br><span class="art">die, -en</span></td><td lang="uk">імпорт; ввезення</td><td class="aud"><button class="say" data-say="Einfuhr" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="імпорт; ввезення" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Export</b><br><span class="art">der, -e</span></td><td lang="uk">експорт</td><td class="aud"><button class="say" data-say="Export" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="експорт" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Fracht</b><br><span class="art">die, -en</span></td><td lang="uk">вантаж</td><td class="aud"><button class="say" data-say="Fracht" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="вантаж" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Güter</b><br><span class="art">das Gut, die Güter (meist Plural)</span></td><td lang="uk">вантажі</td><td class="aud"><button class="say" data-say="Güter" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="вантажі" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Import</b><br><span class="art">der, -e</span></td><td lang="uk">імпорт</td><td class="aud"><button class="say" data-say="Import" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="імпорт" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>internationaler Transport</b><br><span class="art">der, -e</span></td><td lang="uk">міжнародне перевезення</td><td class="aud"><button class="say" data-say="internationaler Transport" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="міжнародне перевезення" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Ladung</b><br><span class="art">die, -en</span></td><td lang="uk">вантаж</td><td class="aud"><button class="say" data-say="Ladung" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="вантаж" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>nationaler Transport</b><br><span class="art">der, -e</span></td><td lang="uk">внутрішнє перевезення</td><td class="aud"><button class="say" data-say="nationaler Transport" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="внутрішнє перевезення" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Packstück</b><br><span class="art">das, -e</span></td><td lang="uk">вантажне місце</td><td class="aud"><button class="say" data-say="Packstück" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="вантажне місце" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Sendung</b><br><span class="art">die, -en</span></td><td lang="uk">вантажне відправлення; партія вантажу</td><td class="aud"><button class="say" data-say="Sendung" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="вантажне відправлення; партія вантажу" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Ware</b><br><span class="art">die, -n</span></td><td lang="uk">товар</td><td class="aud"><button class="say" data-say="Ware" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="товар" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Zollabfertigung</b><br><span class="art">die, -en</span></td><td lang="uk">митне оформлення</td><td class="aud"><button class="say" data-say="Zollabfertigung" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="митне оформлення" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Zollgebiet</b><br><span class="art">das, -e</span></td><td lang="uk">митна територія</td><td class="aud"><button class="say" data-say="Zollgebiet" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="митна територія" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr>
+<tr><td><b>Zollunion</b><br><span class="art">die, -en</span></td><td lang="uk">митний союз</td><td class="aud"><button class="say" data-say="Zollunion" data-lang="de" aria-label="Deutsch anhören">DE ▶</button> <button class="say" data-say="митний союз" data-lang="uk" aria-label="Ukrainisch anhören">UA ▶</button></td></tr></table>
+      </details>
+    </main>
+    <div id="tip" role="tooltip"></div>
+    <script>
+    const GL = {"Absender": {"art": "der, -", "uk": "відправник (вантажу)"}, "Agent": {"art": "der, -en", "uk": "агент (партнер-експедитор у країні імпорту)"}, "Air Waybill": {"art": "der, -s · Abk. AWB", "uk": "авіавантажна накладна"}, "Airline": {"art": "die, -s", "uk": "авіакомпанія"}, "Auftraggeber": {"art": "der, -", "uk": "замовник"}, "Ausfuhr": {"art": "die, -en", "uk": "експорт; вивезення"}, "Bill of Lading": {"art": "das, -s · Abk. B/L", "uk": "коносамент"}, "Carrier": {"art": "der, -", "uk": "перевізник"}, "CMR-Frachtbrief": {"art": "der, -e", "uk": "міжнародна товарно-транспортна накладна CMR"}, "Drittstaat": {"art": "der, -en", "uk": "третя країна"}, "Einfuhr": {"art": "die, -en", "uk": "імпорт; ввезення"}, "Empfänger": {"art": "der, -", "uk": "вантажоодержувач"}, "Export": {"art": "der, -e", "uk": "експорт"}, "Exporteur": {"art": "der, -e", "uk": "експортер"}, "Fracht": {"art": "die, -en", "uk": "вантаж"}, "Frachtführer": {"art": "der, -", "uk": "перевізник"}, "Frachtvertrag": {"art": "der, -verträge", "uk": "договір перевезення вантажу"}, "Fuhrunternehmer": {"art": "der, -", "uk": "автоперевізник"}, "Güter": {"art": "das Gut, die Güter (meist Plural)", "uk": "вантажі"}, "Güterverkehr": {"art": "der (nur Singular)", "uk": "вантажні перевезення"}, "Handelsrechnung": {"art": "die, -en", "uk": "комерційний рахунок (інвойс)"}, "Import": {"art": "der, -e", "uk": "імпорт"}, "Importabfertigung": {"art": "die, -en", "uk": "імпортне митне оформлення"}, "Importeur": {"art": "der, -e", "uk": "імпортер"}, "internationaler Transport": {"art": "der, -e", "uk": "міжнародне перевезення"}, "Käufer": {"art": "der, -", "uk": "покупець"}, "Kaufvertrag": {"art": "der, -verträge", "uk": "договір купівлі-продажу"}, "Ladung": {"art": "die, -en", "uk": "вантаж"}, "Lager": {"art": "das, - / Läger", "uk": "склад"}, "Lagerung": {"art": "die, -en", "uk": "складування; зберігання"}, "Logistik": {"art": "die (nur Singular)", "uk": "логістика"}, "nationaler Transport": {"art": "der, -e", "uk": "внутрішнє перевезення"}, "Niederlassung": {"art": "die, -en", "uk": "філія"}, "Packliste": {"art": "die, -n", "uk": "пакувальний лист"}, "Packstück": {"art": "das, -e", "uk": "вантажне місце"}, "Reederei": {"art": "die, -en", "uk": "судноплавна компанія"}, "Selbsteintritt": {"art": "der (nur Singular)", "uk": "виконання перевезення самим експедитором"}, "Sendung": {"art": "die, -en", "uk": "вантажне відправлення; партія вантажу"}, "Spediteur": {"art": "der, -e", "uk": "експедитор"}, "Spedition": {"art": "die, -en", "uk": "експедиторська компанія; транспортне експедирування"}, "Speditionsvertrag": {"art": "der, -verträge", "uk": "договір транспортного експедирування"}, "Transport": {"art": "der, -e", "uk": "перевезення; транспортування"}, "TUL-Logistik": {"art": "die (nur Singular)", "uk": "TUL-логістика (транспортування, перевантаження та складування)"}, "Umschlag": {"art": "der (nur Singular)", "uk": "перевантаження"}, "Umschlagsunternehmen": {"art": "das, -", "uk": "компанія з перевантаження (вантажів)"}, "Verkehrsmittel": {"art": "das, -", "uk": "транспортний засіб"}, "Verkehrsträger": {"art": "der, -", "uk": "вид транспорту"}, "Verkäufer": {"art": "der, -", "uk": "продавець"}, "Versender": {"art": "der, -", "uk": "вантажовідправник"}, "Vertragspartei": {"art": "die, -en", "uk": "сторона договору"}, "Ware": {"art": "die, -n", "uk": "товар"}, "Zollabfertigung": {"art": "die, -en", "uk": "митне оформлення"}, "Zollbehörde": {"art": "die, -n", "uk": "митний орган; митниця"}, "Zollgebiet": {"art": "das, -e", "uk": "митна територія"}, "Zollunion": {"art": "die, -en", "uk": "митний союз"}, "Zustellung": {"art": "die, -en", "uk": "доставка (вантажоодержувачу)"}};
+    // Fassung umschalten
+    document.querySelectorAll('.levels button').forEach(b => b.addEventListener('click', () => {
+      document.querySelectorAll('.levels button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      document.querySelectorAll('section.level').forEach(s => s.classList.toggle('active', s.id === b.dataset.level));
+      hideTip(true);
+      window.scrollTo({top:0});
+    }));
+    // Sprachausgabe
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis ? speechSynthesis.getVoices() : []; }
+    if (window.speechSynthesis) { loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+    function say(text, lang) {
+      const msg = document.getElementById('voicemsg');
+      if (!window.speechSynthesis) { msg.textContent = 'Dieser Browser unterstützt keine Sprachausgabe.'; msg.style.display = 'block'; return; }
+      const code = lang === 'uk' ? 'uk' : 'de';
+      const v = voices.find(x => x.lang && x.lang.toLowerCase().startsWith(code));
+      if (!v && code === 'uk') {
+        msg.textContent = 'Auf diesem Gerät ist keine ukrainische Stimme installiert. / На цьому пристрої не встановлено українського голосу.';
+        msg.style.display = 'block'; return;
+      }
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = code === 'uk' ? 'uk-UA' : 'de-DE';
+      if (v) u.voice = v;
+      u.rate = 0.9;
+      speechSynthesis.speak(u);
+    }
+    document.addEventListener('click', e => {
+      const b = e.target.closest('[data-say]');
+      if (b) say(b.dataset.say, b.dataset.lang);
+    });
+    // Tooltip
+    const tip = document.getElementById('tip');
+    let pinned = null, hideTimer = null;
+    function showTip(el) {
+      clearTimeout(hideTimer);
+      const k = el.dataset.k, g = GL[k];
+      tip.innerHTML = '<div class="de">' + k + '</div><div class="art">' + g.art + '</div><div class="uk" lang="uk">' + g.uk + '</div>' +
+        '<button data-say="' + k + '" data-lang="de">DE ▶</button><button data-say="' + g.uk + '" data-lang="uk">UA ▶</button>';
+      tip.style.display = 'block';
+      const r = el.getBoundingClientRect();
+      let left = r.left + window.scrollX;
+      const maxLeft = window.scrollX + document.documentElement.clientWidth - tip.offsetWidth - 8;
+      tip.style.left = Math.max(8, Math.min(left, maxLeft)) + 'px';
+      tip.style.top = (r.bottom + window.scrollY + 6) + 'px';
+    }
+    function hideTip(force) {
+      if (pinned && !force) return;
+      pinned = null;
+      tip.style.display = 'none';
+    }
+    document.querySelectorAll('section .term').forEach(el => {
+      el.addEventListener('mouseenter', () => { if (!pinned) showTip(el); });
+      el.addEventListener('mouseleave', () => { hideTimer = setTimeout(() => hideTip(false), 300); });
+      el.addEventListener('focus', () => showTip(el));
+      el.addEventListener('click', e => { e.stopPropagation(); pinned = el; showTip(el); });
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pinned = el; showTip(el); } });
+    });
+    tip.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+    tip.addEventListener('mouseleave', () => { hideTimer = setTimeout(() => hideTip(false), 300); });
+    document.addEventListener('click', e => { if (!e.target.closest('#tip') && !e.target.closest('.term')) hideTip(true); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') hideTip(true); });
+    </script>
+    </body>
+    </html>
